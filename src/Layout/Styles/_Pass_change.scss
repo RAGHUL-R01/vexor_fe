@@ -1,0 +1,74 @@
+.PC909{
+    background-color: aqua;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    // left: 5px;
+    height: 100%;
+    width: 100%;
+}
+.CONt_PC009{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    // background-color: aqua;
+    gap:30px;
+}
+.lab1PC90{
+    margin-right: 55px;
+}
+.lab2PC90{
+    margin-right: 50px;
+}
+.lab3PC90{
+    margin-right: 25px;
+}
+.PC_input009{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    &:focus{
+        border: none;
+        // border-radius: 5px;
+        // background-color: red;
+    }
+}
+.PC_PS_009{
+    font-size: 10px;
+    position: relative;
+    left: -35px;
+    top:-3px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.Status_PC009{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    position: fixed;
+    top: 20px;
+}
+.cont_PC_009{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: orangered;
+    animation-name: test;
+    animation-delay: 5s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: 2;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+@keyframes test{
+    50%{
+        background-color: rgb(14, 61, 61);
+        transform: translate(10%);
+    }
+    75%{
+        background-color: black;
+    }
+}

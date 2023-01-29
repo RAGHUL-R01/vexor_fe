@@ -1,0 +1,79 @@
+body{
+    background-color: rgb(212, 212, 212);
+}
+.bg_align45746{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ticket_container{
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 10px rgb(108, 108, 108);
+    width:500px;
+    height:580px;
+    background-color: rgb(255, 255, 255);
+}
+img{
+    width: 120px;
+    border-radius: 10px;
+}
+.Movie_details_2920{
+    display: flex;
+    padding: 25px 25px 10px 25px;
+}
+.mid_circ{
+    overflow: hidden;
+    border: none;
+    // border-top: 2px dotted red;
+    // margin-top: 10px;
+}
+.topic_3267{
+    font-size: 25px;
+    font-weight: 700;
+}
+.end_amount_5678{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    margin:5px 0 20px 0;
+    background-color: rgb(167, 214, 255);
+    border-radius: 0 0 20px 20px;
+}
+.circ{
+    position: relative;
+    left:-10px;
+    height:20px;
+    width:20px;
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: rgb(142, 142, 142);
+    // transform: translate(-10px,-15px);
+}
+.circ2{
+    @use .circ;
+    left: 10px;
+}
+.dott_line{
+    border-top: 5px dashed rgb(114, 114, 114);
+    width:460px;
+    transform: translate(19px,-13px);
+}
+.amount787{
+    text-decoration: none;
+    color:black;
+    font-size: 10px;
+    font-weight: 600;
+}
+.anticon{
+    vertical-align: 1px;
+}
+.flx4544{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

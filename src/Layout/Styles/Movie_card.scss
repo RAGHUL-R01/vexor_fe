@@ -1,0 +1,67 @@
+@import url("./NavBar.scss");
+.card_container{
+    background-color: rgb(255, 255, 255);
+    margin: 0 6%;
+
+}
+.card_ {
+    // background-color: #ff3700;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 10px;
+    flex-wrap: nowrap;
+    // margin-left: 40px;
+    // transform: translateX(0.5%);
+}
+.card_container::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: rgb(255, 255, 255);
+    // -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5); 
+  }
+.head_cont{
+    transform: translateY(20px);
+
+}
+.card_img {
+    border-radius: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 190px;
+    height: 250px;
+}
+.rec_{
+    color:black;
+    font-weight: 700;
+    font-size: larger;
+    z-index: 1;
+}
+.see_all{
+    color:orangered;
+    font-weight: 500;
+    font-size: smaller;
+    transform: translate(-50px,10px);
+    cursor: pointer;
+    &::after{
+        content: " >";
+    }
+}
+.review_ {
+    justify-content: center;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 2px 0;
+}
+.nam_44{
+    color: black;
+    padding-top: 5px;
+    font-weight: 600;
+}
+.Cat_44{
+    color: rgb(74, 74, 74);
+    font-size: 13px;
+    font-weight: 600;
+}

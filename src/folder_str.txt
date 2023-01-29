@@ -1,0 +1,9 @@
+Assets - (except js code)contain images, font files, SVG's
+Components - UI components like Button, navbar, menu
+Data - constant datas like json
+featuress - authentication, isOnline, Verification
+Hooks - Global custom Hooks
+lib - code uses another library like axios
+pages - main pages, cart pages, login page, etc
+Services - External API interaction
+Utils - common block of code used in multiple places

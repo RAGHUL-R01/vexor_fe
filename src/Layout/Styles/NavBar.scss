@@ -1,0 +1,162 @@
+.flx {
+    display: flex;
+    justify-content: center;
+    // flex-wrap: nowrap;
+    color: azure;
+    // overflow: hidden;
+}
+
+.nav {
+    @extend .flx;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+.str_1 {
+    padding: 1rem;
+    // background-color: rgb(87, 252, 255)
+}
+
+.cont_1 {
+    @extend .nav;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.Ind_1 {
+    @extend .cont_1;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.Logo {
+    height: 80px;
+    width: 150px;
+    transform: translate(0, -25px);
+}
+
+.input_b {
+    padding: 5px 10px;
+    transform: translate(0, -5px);
+}
+
+.search_btn {
+    border-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ant-btn {
+    height: 40px;
+    width: 40px;
+    transform: translate(0, -5px);
+
+    &:hover {
+        content: "Search";
+    }
+}
+
+.search_icon {
+    font-size: 150%;
+    overflow: hidden;
+    transform: translate(-5px, 2px);
+}
+
+.Ind_2 {
+    @extend .Ind_1;
+    justify-content: flex-end;
+    margin-right: 60px;
+}
+
+.drop_ {
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    transform: translate(0, -15%);
+}
+
+.opt_::selection,.opt_:focus,.opt:hover {
+    background-color: aqua;
+    padding: 20px;
+}
+
+.opt_ {
+    background-color: rgb(52, 114, 206);
+    // padding: 55px;
+    margin: 5px;
+    border: 5px solid rgb(245, 22, 22);
+}
+
+.sign_in {
+    background-color: rgb(255, 81, 17);
+    padding: 2px 8px;
+    color: white;
+    border-radius: 5px;
+    transform: translate(0, 8%);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.menu_ {
+    background-color: transparent;
+    cursor: pointer;
+}
+.pow{
+    color:red;
+    transform: translate(60%,-200%);
+    font-size: 10px;
+    // background-color: aqua;
+}
+.fs_ {
+    font-size: 14px;
+    justify-content: flex-start;
+    transform: translateX(10%);
+}
+.fs_2 {
+    font-size: 14px;
+    justify-content: flex-end;
+    transform: translateX(-10%);
+}
+
+.fs_h {
+    padding: 4px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(207, 205, 205);
+    &:hover {
+        cursor: pointer;
+        // font-weight: 600;
+        color:white;
+        overflow: hidden;
+        // background-color: rgb(26, 81, 81);
+    }
+}
+.glass{
+    opacity: 0.5;
+    background-color: rgb(153, 167, 180);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    z-index: 100;
+}
+.hide_ {
+    display: none;
+}
+.show{
+    display: block;
+}
+.Menu_config_{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+}

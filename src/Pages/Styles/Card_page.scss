@@ -1,0 +1,132 @@
+.Header_card {
+    //https://www.magicpattern.design/tools/css-backgrounds
+    display: flex;
+    justify-content: space-between;
+    // overflow: scroll;
+}
+
+.bg_clr_card_header {
+    background: -webkit-linear-gradient(344deg, rgba(0, 255, 235, 1) 0%, rgba(17, 0, 212, 1) 13%, rgba(207, 232, 42, 1) 46%, rgba(232, 6, 11, 1) 65%, rgba(115, 150, 0, 1) 75%, rgba(1, 222, 42, 0.87) 89%);
+    padding: 30px 6%;
+}
+
+.Img_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.Img_in_Card_page {
+    border-radius: 15px;
+    height: 400px;
+    width: 300px;
+
+    &:hover {
+        box-shadow: 10px 10px rgb(5, 31, 101);
+        transform: translate(-2px, -2px);
+    }
+}
+
+.cont_page_567 {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.flx_c667 {
+    border-radius: 5px;
+    background-color: rgb(80, 80, 80);
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 140%;
+}
+
+.tyu_77 {
+    display: flex;
+    align-items: center;
+}
+
+.info_card_678 {
+    color: black;
+    border-radius: 2px;
+    background-color: aliceblue;
+    padding: 2px 10px;
+    width: fit-content;
+}
+
+.share_card_678 {
+
+    display: flex;
+    justify-content: flex-end;
+    background-color: aqua;
+    align-items: flex-start;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), repeating-linear-gradient(#444cf755, #444cf7);
+    // https://www.magicpattern.design/tools/css-backgrounds
+    opacity: 0.9;
+}
+
+.icon_align_carspage {
+    padding: 0;
+    transform: translate(-5px, -4px);
+}
+
+.share_txt_card {
+    padding: 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+    transform: translateY(6px);
+    color: white;
+}
+
+.abt_uj {
+    margin: 10px 6%;
+    // background-color: rgb(240, 186, 186);
+    flex-direction: column;
+    width: 80%;
+}
+
+.fix_hdr9365 {
+    padding: 15px 60px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.dis_non {
+    display: none;
+}
+
+.bg_uio {
+    background-color: rgb(255, 255, 255);
+}
+
+.flx_614246_oi {
+    display: flex;
+}
+
+.Fl8753 {
+    width:450px;
+    height: 240px;
+    // background-color: #444cf7;
+    flex-direction: column;
+    padding: 20px;
+}
+.agn_7643{
+    transform: translateX(150px);
+}
+.yt644 {
+    // justify-content: space;
+    padding-bottom: 20px;
+    align-items: center;
+}

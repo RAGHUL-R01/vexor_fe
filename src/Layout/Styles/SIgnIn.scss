@@ -1,0 +1,79 @@
+@import 'NavBar.scss';
+
+.pos776 {
+    z-index: 9999;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    height: 500px;
+    width: 450px;
+    background-color: rgb(242, 255, 255);
+    margin-top: -9em;
+    margin-left: -15em;
+    border-radius: 10px;
+}
+
+@mixin flx001 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.th7fge7 {
+    @include flx001();
+    flex-direction: column;
+    text-align: center;
+}
+
+.flx_al_7546 {
+    @include flx001();
+    padding: 20px;
+}
+
+.Mve_right {
+    transform: translateX(140px);
+    cursor: pointer;
+}
+
+.cwg88 {
+    padding: 10px 50px;
+    border: 1px solid grey;
+    margin: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(222, 222, 255);
+    }
+}
+.btn_align998{
+    width:100px;
+    transform: translate(0,15px);
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 15px;
+
+    // background-color: aqua;
+    max-width: 200px;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
+    // font-size: 15px;
+    background-color: rgb(242, 255, 255);
+    padding-right: 10px;
+
+    &:focus {
+        background-color: black;
+    }
+}
+
+.ic_mv36 {
+    transform: translateX(-40px);
+}
+
+.ic_mv361 {
+    transform: translateX(-33px);
+
+}
+.dis_non{
+    display: none;
+}

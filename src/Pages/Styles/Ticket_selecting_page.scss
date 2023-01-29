@@ -1,0 +1,92 @@
+body{
+    background-color: white;
+}
+
+.Movie_title6355{
+    color: white;
+    background-color: rgb(16, 25, 43);
+    padding-left: 6%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.title665698{
+    font-size: 32px;
+    font-weight: 500;
+}
+.jorn6454{
+    color: rgb(215, 215, 215);
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgb(215, 215, 215);
+    padding: 0 6px;
+    border-radius: 5px;
+}
+
+.picker53797{
+    background-color: rgb(255, 255, 255);
+    margin: 12px 7% 8px 7%;
+    display: flex;
+    height: 56px;
+    justify-content: space-between;
+}
+.tghy7{
+    display: flex;
+    justify-content: space-evenly;
+    width:50%;
+    height: 100%;
+}
+.btn_arrange56{
+    color: white;
+    padding: 15px 20px 5px 20px;
+}
+.box826436{
+    padding: 5px;
+    font-size: 12px;
+    background-color: white;
+}
+.box_time_9545{
+    border: 1px solid rgb(24, 209, 28);
+    border-radius: 5px;
+    padding: 3px 30px;   
+    margin-right: 20px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(10, 159, 72);
+        color: white;
+    }
+}
+.Warning_not_TSP{
+    z-index: 1000;
+    opacity: 0.5;
+    position: fixed;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    background-color: rgb(192, 192, 192);
+}
+.war_82636{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top:20%;
+    bottom:0;
+    right: 0;
+    left: 40%;
+    background-color: white;
+    z-index: 9999;
+    height: 150px;
+    width:350px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.disP_non{
+    display: none;
+    visibility: hidden;
+}
+.css-14lo706{
+    color: black;
+}
