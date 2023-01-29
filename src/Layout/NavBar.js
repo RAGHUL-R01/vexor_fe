@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Styles/NavBar.scss';
 import Logo from '../Assets/Vexor.png';
-import { makeStyles } from '@material-ui/core';
 import { SearchOutlined } from '@ant-design/icons';
 import { Button, Input } from 'antd';
 import MenuIcon from '@mui/icons-material/Menu';
