@@ -75,7 +75,6 @@ export default function Ticket_selecting_page() {
   const Dispatcher = () => {
     if (Reducer_obj.Date && Reducer_obj.Language && Reducer_obj.Picture && Reducer_obj.Time && Reducer_obj.Theater) {
       console.log("In Dispatcher")
-      console.log(Reducer_obj)
       dispatch(AddTicketDetailsToStore(Reducer_obj));
       navigate("/Ticket_Booking");
     }

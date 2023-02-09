@@ -1,13 +1,10 @@
 import './Styles/Ticket_booking.scss';
-import PhoneIcon from '@mui/icons-material/Phone';
-import QR from '../Services/QR_generator';
-import { CloseOutlined } from '@ant-design/icons';
-import { Page, Text, View, Document, Image, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import React, { useEffect } from 'react';
+import QRCode from 'qrcode.react';
+import jsPDF from 'jspdf';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-const ref = React.createRef();
 export const BookingID = () => {
     var result = '';
     var characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789';
@@ -17,40 +14,51 @@ export const BookingID = () => {
     }
     return result;
 }
-const MyDocument = ({ Store_, Store_details, Booking_ID, QRT }) => (
-    <Document>
-        <Page size="A4" style={{ margin: "50" }}>
-            <View style={{ flexDirection: "row" }}>
-                <View>
-                    <Image src={Store_.Image} style={{ width: "150px", borderRadius: "10px", marginRight: "30px" }} />
-                </View>
-                <View style={{ padding: "20px 0" }}>
-                    <Text style={{ fontSize: "30px", fontWeight: "10", padding: "5px 0 40px 0" }}>{Store_.Movie_name + " (" + Store_.Details.Certificate + ")"}</Text>
-                    <Text style={{ padding: "5px 0" }}>{Store_details.Language + ", " + Store_details.Picture}</Text>
-                    <Text style={{ padding: "5px 0" }}>{Store_details.Date + " | " + Store_details.Timer}</Text>
-                    <Text style={{ padding: "5px 0" }}>{Store_details.Theater}</Text>
-                </View>
-            </View>
-            <View style={{ padding: "30px 0", flexDirection: "row"}}>
-                <View><Text>Hi</Text></View>
-                
-            </View>
-        </Page>
-    </Document>
-);
+
 
 export default function Ticket_booking() {
     let navigate = useNavigate();
     const Booking_ID = BookingID();
     const Store_ = useSelector(store => store.Reducer[0]);
     const Store_details = useSelector(store => store.Reducer_Tic[0]);
-    const QRT = <QR />;
+    const qrCodeRef = useRef(null);
+
+    const downloadPDF = () => {
+        const canvas = qrCodeRef.current.childNodes[0];
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.setLineWidth(2);
+        pdf.rect(10, 10, 190, 275);
+        pdf.addImage(Store_.Image, 'PNG', 40, 20, 40, 60);
+        pdf.setFontSize(20);
+        pdf.text(Store_.Movie_name, 90, 30);
+        pdf.setFontSize(14);
+        pdf.text(Store_details.Language + "  " + Store_details.Picture, 90, 40);
+        pdf.text(Store_details.Date + "  " + Store_details.Timer, 90, 50);
+        pdf.text(Store_details.Theater, 90, 60);
+        pdf.addImage(imgData, 'PNG', 40, 100, 50, 50);
+        pdf.text("BOOKING ID :" + Booking_ID, 100, 110)
+        pdf.text("SCREEN 1", 100, 120)
+        pdf.text("1 Ticket(s)", 100, 130)
+        pdf.text("Total Amount", 40, 170)
+        pdf.text("Rs.155.75", 150, 170)
+        pdf.setFontSize(12);
+        pdf.text("Privacy Policy", 40, 190)
+        pdf.text("____________", 40, 192)
+        pdf.setFontSize(10);
+        pdf.text("This ticket has been generated using Vexor app for educational purpose!", 40, 202)
+        pdf.text("VEXOR has been created and maintained by R-01", 40, 210)
+        pdf.save('qr-code.pdf');
+    };
     useEffect(() => {
         if (!Store_.Movie_name) navigate('/main');
     }, [Store_.Movie_name, navigate]);
     return (
-        <PDFViewer style={{ height: "700px", width: "100%" }}>
-            <MyDocument Store_={Store_} Store_details={Store_details} Booking_ID={Booking_ID} QRT={QRT} />
-        </PDFViewer>
+        <div>
+            <div ref={qrCodeRef}>
+                <QRCode value={Store_.Movie_name + " " + Store_details.Date + "  " + Store_details.Timer + " " + Booking_ID} size={200} />
+            </div>
+            <button onClick={downloadPDF}>Download PDF</button>
+        </div>
     )
 }
