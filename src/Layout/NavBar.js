@@ -10,7 +10,7 @@ import Menu from './Menu';
 
 export default function () {
     const [Style_state, set_style_state] = useState(
-        { menu: "hide_", glass: "none",sin:"hide_" });
+        { menu: "hide_", glass: "none", sin: "hide_" });
     const menu_toggle = (e) => {
         e.preventDefault();
         if (Style_state.menu === "hide_") {

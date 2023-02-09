@@ -2,8 +2,8 @@ import './Styles/Ticket_booking.scss';
 import PhoneIcon from '@mui/icons-material/Phone';
 import QR from '../Services/QR_generator';
 import { CloseOutlined } from '@ant-design/icons';
-import Pdf from "react-to-pdf";
-import React, {useEffect} from 'react';
+import { Page, Text, View, Document, Image, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,64 +17,40 @@ export const BookingID = () => {
     }
     return result;
 }
+const MyDocument = ({ Store_, Store_details, Booking_ID, QRT }) => (
+    <Document>
+        <Page size="A4" style={{ margin: "50" }}>
+            <View style={{ flexDirection: "row" }}>
+                <View>
+                    <Image src={Store_.Image} style={{ width: "150px", borderRadius: "10px", marginRight: "30px" }} />
+                </View>
+                <View style={{ padding: "20px 0" }}>
+                    <Text style={{ fontSize: "30px", fontWeight: "10", padding: "5px 0 40px 0" }}>{Store_.Movie_name + " (" + Store_.Details.Certificate + ")"}</Text>
+                    <Text style={{ padding: "5px 0" }}>{Store_details.Language + ", " + Store_details.Picture}</Text>
+                    <Text style={{ padding: "5px 0" }}>{Store_details.Date + " | " + Store_details.Timer}</Text>
+                    <Text style={{ padding: "5px 0" }}>{Store_details.Theater}</Text>
+                </View>
+            </View>
+            <View style={{ padding: "30px 0", flexDirection: "row"}}>
+                <View><Text>Hi</Text></View>
+                
+            </View>
+        </Page>
+    </Document>
+);
+
 export default function Ticket_booking() {
     let navigate = useNavigate();
     const Booking_ID = BookingID();
     const Store_ = useSelector(store => store.Reducer[0]);
     const Store_details = useSelector(store => store.Reducer_Tic[0]);
+    const QRT = <QR />;
     useEffect(() => {
         if (!Store_.Movie_name) navigate('/main');
-      }, [Store_.Movie_name,navigate]);
+    }, [Store_.Movie_name, navigate]);
     return (
-        <div >
-            <div ref={ref} className='container-fluid box bg_align45746'>
-                <div className='ticket_container'>
-                    <div className='Movie_details_2920'>
-                        <div style={{ paddingRight: "20px" }}><img src={Store_.Image} alt="Movie" style={{height:"160px"}}/></div>
-                        <div>
-                            <div className='topic_3267'>{Store_.Movie_name +" ("+Store_.Details.Certificate+")"}</div>
-                            <div style={{ padding: "5px 0",fontSize:"13px",fontWeight:"500" }}>
-                                <div style={{padding:"5px 0"}}>{ Store_details.Language+", "+Store_details.Picture}</div>
-                                <div style={{padding:"5px 0"}}>{ Store_details.Date+" | "+ Store_details.Timer}</div>
-                                <div style={{padding:"5px 0"}}>{ Store_details.Theater}</div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mid_circ' style={{ display: "flex", justifyContent: "space-between" }}>
-                        <div className='circ'></div><div className='circ circ2'></div></div>
-                    <div className='dott_line'></div>
-                    <div className='Movie_details_2920' style={{ margin: "15px 15px 0 15px", padding: "10px", backgroundColor: "#efefef", borderRadius: "15px" }}>
-                        <div > <QR Value={Store_.Movie_name+"_"+Booking_ID+"_"+Store_details.Date+"_"+Store_details.Timer} /></div>
-                        <div style={{ textAlign: "center", width: "100%",fontWeight:"500" }}>
-                            <div style={{fontSize:"14px",paddingBottom:"5px"}}>1 Ticket(s)</div>
-                            <div style={{fontSize:"15px"}}>SCREEN 1</div>
-                            <div>Dress C1 - F7</div>
-                            <div>
-                                <span>Booking ID: </span>
-                                <span style={{ fontWeight: "700" }}> { Booking_ID}</span></div>
-                            <div style={{ fontSize: "12px", paddingTop: "10px" }}>Tap to see more{BookingID}</div>
-                        </div>
-                    </div>
-                    <div style={{ padding: "20px", textAlign: "center" }}>A Confirmation is sent on e-mail/SMS/WhatsApp within 15 minutes of booking.</div>
-                    <div className="box" style={{ justifyContent: "space-around", marginTop: "0" }}>
-                        <div className='box' style={{ flexDirection: "column", marginTop: "0" }}>
-                            <CloseOutlined style={{ fontSize: "30px", justifyContent: "center" }} />
-                            <div>Cancel booking</div></div>
-                        <div className='box' style={{ flexDirection: "column", marginTop: "0" }}>
-                            <PhoneIcon sx={{ fontSize: "30px", justifyContent: "center" }} />
-                            <div>Contact support</div></div>
-                    </div>
-                    <div className='end_amount_5678'>
-                        <div>Total Amount</div>
-                        <div>Rs. 150.00</div>
-                    </div>
-                </div>
-            </div>
-            <div className='flx4544'>
-                <Pdf targetRef={ref} x={-150} y={30} scale={5} filename={Store_.Movie_name+"_"+Booking_ID+"_"+Store_details.Date+"_"+Store_details.Timer} style={{ display: "flex" }}>
-                    {({ toPdf }) => <button onClick={toPdf} className="btn btn-primary">Download Ticket</button>}
-                </Pdf>
-            </div>
-        </div>)
+        <PDFViewer style={{ height: "700px", width: "100%" }}>
+            <MyDocument Store_={Store_} Store_details={Store_details} Booking_ID={Booking_ID} QRT={QRT} />
+        </PDFViewer>
+    )
 }
